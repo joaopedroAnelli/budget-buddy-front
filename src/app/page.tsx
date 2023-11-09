@@ -1,4 +1,5 @@
 import styles from './styles.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -11,12 +12,12 @@ export default function Home() {
         A budgeting app for the modern age.
       </p>
 
-      <a
-        href={'/api/auth/login'}
+      <Link
+        href='/check-in'
         className='text-center bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg m-8 transition-all w-full lg:w-96'
       >
         Start
-      </a>
+      </Link>
     </div>
   );
 }
