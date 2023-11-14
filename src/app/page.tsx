@@ -14,6 +14,7 @@ export default function Home() {
 
       <Link
         href='/check-in'
+        data-cy='start-button'
         className='text-center bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg m-8 transition-all w-full lg:w-96'
       >
         Start
