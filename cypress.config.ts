@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress';
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: '.env.local' });
+dotenv.config({ path: '.env.test' });
 
 export default defineConfig({
   component: {
@@ -12,9 +12,11 @@ export default defineConfig({
   },
 
   e2e: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:' + (process.env.PORT || 3001),
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      // require('@cypress/code-coverage/task')(on, config);
+      // return config;
     },
     env: {
       auth0_username: process.env.CYPRESS_AUTH0_USERNAME,

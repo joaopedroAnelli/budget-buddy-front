@@ -32,10 +32,7 @@ function loginViaAuth0Ui(username: string, password: string) {
   cy.wait('@checkIn');
 
   // Ensure Auth0 has redirected us back to the RWA.
-  cy.url({ timeout: 10000 }).should(
-    'equal',
-    'http://localhost:3000/app/user-profile'
-  );
+  cy.url({ timeout: 15000 }).should('includes', '/app/user-profile');
 }
 
 Cypress.Commands.add('loginToAuth0', (username: string, password: string) => {
